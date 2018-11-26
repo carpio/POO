@@ -43,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CandyMachine\CandyBase.cs" />
     <Compile Include="CandyMachine\Machine.cs" />
+    <Compile Include="CandyMachine\Mazapan.cs" />
+    <Compile Include="CandyMachine\Paleta.cs" />
     <Compile Include="CandyMachine\Product.cs" />
+    <Compile Include="CandyMachine\Pulparindo.cs" />
     <Compile Include="CandyMachine\StaticProduct.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

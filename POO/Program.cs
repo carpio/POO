@@ -12,33 +12,44 @@ namespace POO
     {
         static void Main(string[] args)
         {
-            Machine maquina = new Machine(22);
+            Pulparindo pulparindo = new Pulparindo();
+            pulparindo.Name = "Pulparindo rojo";
+            pulparindo.Cost = 4.5;
+            var despachando = pulparindo.Despachar();
+
+            Console.WriteLine(despachando);
+
+            Mazapan mazapan = new Mazapan();
+            mazapan.Name = "Mazapan de la rosa";
+            mazapan.Weight = 300;
+            var despacharMazapan = mazapan.Despachar(1);
+            var despacharMazapan_ = mazapan.DespacharMazapan();
+
+            Console.WriteLine(despacharMazapan);
+            Console.WriteLine(despacharMazapan_);
+
+            Paleta paleta = new Paleta();
+            paleta.Name = "Paleta";
+
+            Console.WriteLine(paleta.Name);
+            Console.WriteLine(paleta.Despachando());
+            Console.WriteLine(paleta.Despachando(1));
             
-            Console.WriteLine(maquina.Name);
+            ////Find Prodcut from ProductList with Marca = Marca_11
+            //var productMarca11 = listaProductos.Where(m => m.Marca == "Marca_11").FirstOrDefault();
 
-            var listaProductos = maquina._productList;
+            //Console.WriteLine(productMarca11.Marca);
+            //Console.WriteLine(productMarca11.Code);
 
-            //Select from Product list, product with code = 4
-            var productoCode4 = listaProductos.Where(s => s.Code == 4).FirstOrDefault();
+            //var productosContienen1 = listaProductos.Where(q => q.Name.Contains("1"));
 
-            Console.WriteLine(productoCode4.Code);
-            Console.WriteLine(productoCode4.Name);
-
-            //Find Prodcut from ProductList with Marca = Marca_11
-            var productMarca11 = listaProductos.Where(m => m.Marca == "Marca_11").FirstOrDefault();
-
-            Console.WriteLine(productMarca11.Marca);
-            Console.WriteLine(productMarca11.Code);
-
-            var productosContienen1 = listaProductos.Where(q => q.Name.Contains("1"));
-
-            foreach (var producto in productosContienen1)
-            {
-                Console.WriteLine(producto.Code);
-                Console.WriteLine(producto.Cost);
-                Console.WriteLine(producto.Marca);
-                Console.WriteLine(producto.Name);
-            }
+            //foreach (var producto in productosContienen1)
+            //{
+            //    Console.WriteLine(producto.Code);
+            //    Console.WriteLine(producto.Cost);
+            //    Console.WriteLine(producto.Marca);
+            //    Console.WriteLine(producto.Name);
+            //}
 
             Console.ReadLine();
         }

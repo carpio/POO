@@ -6,44 +6,39 @@ using System.Threading.Tasks;
 
 namespace POO.CandyMachine
 {
-    public class Product:CandyBase
+    public class Product
     {
         //Get means it can be read and Set means it can be written
-        public int Code { get; set; }        
-        public decimal Cost { get; set; }
-        public string Marca { get; set; }
+        public string Name { get; set; }        
+        public double Cost { get; set; }
+        public int Weight { get; set; }
 
-        public Product CreateProduct()
+        public virtual string Despachar()
         {
-            Product productEjemplo = new Product();
-            productEjemplo.Code = 11;
-            productEjemplo.Cost = 33;
-            productEjemplo.Marca = "De la Rosa";
-            productEjemplo.Name = "Pulparindo";
-
-            return productEjemplo;
+            return "Despachando";
         }
 
-        public Product CreateProduct(string name)
+        public virtual string Despachar(int x)
         {
-            Product productEjemplo = new Product();
-            productEjemplo.Code = 22;
-            productEjemplo.Cost = 44;
-            productEjemplo.Marca = "De la Rosa";
-            productEjemplo.Name = name;
-
-            return productEjemplo;
+            return "x";                
         }
+    }
 
-        public Product CreateProduct(int Code)
-        {
-            Product productoEjemplo = new Product();
-            productoEjemplo.Name = StaticProduct.Name;
-            productoEjemplo.Cost = StaticProduct.Cost;
-            productoEjemplo.Code = 99;
-            productoEjemplo.Marca = "Sabritas";
+    public abstract class ProductAbstract: Product
+    {
+        public abstract string DespacharMazapan();
+    }
 
-            return productoEjemplo;
-        }
+    public interface IProduct
+    {
+        string Despachando();
+        string Despachando(int a);
+    }
+
+    public struct Prod
+    {
+        public decimal CostPulparindo;
+        public int CostMazapan;
+        public int CostPaleta;
     }
 }
